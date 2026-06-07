@@ -21,7 +21,6 @@
     <properties>
         <java.version>21</java.version>
         <spring.boot.version>3.5.0</spring.boot.version>
-        <spring.kafka.version>3.3.0</spring.kafka.version>
 
         <maven.compiler.release>21</maven.compiler.release>
 
