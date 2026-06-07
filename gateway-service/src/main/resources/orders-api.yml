@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: Orders API
+  version: 1.0.0
+  description: API for creating trading orders
+
+paths:
+  /orders:
+    post:
+      summary: Create a new order
+      operationId: createOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+            example:
+              orderId: ORD-123
+              customerId: CUST-55
+              market: AAPL
+              side: BUY
+              quantity: 100
+      responses:
+        '201':
+          description: Order created successfully
+        '400':
+          description: Invalid request payload
+
+components:
+  schemas:
+    OrderRequest:
+      type: object
+      required:
+        - orderId
+        - customerId
+        - market
+        - side
+        - quantity
+      properties:
+        orderId:
+          type: string
+          example: ORD-123
+        customerId:
+          type: string
+          example: CUST-55
+        market:
+          type: string
+          description: Trading symbol (e.g., stock ticker)
+          example: AAPL
+        side:
+          type: string
+          enum: [BUY, SELL]
+          description: Order direction
+          example: BUY
+        quantity:
+          type: integer
+          minimum: 1
+          example: 100
