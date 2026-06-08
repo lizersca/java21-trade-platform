@@ -14,7 +14,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OrderRequest'
+              $ref: '#/components/schemas/CreateOrderRequest'
             example:
               orderId: ORD-123
               customerId: CUST-55
@@ -29,7 +29,7 @@ paths:
 
 components:
   schemas:
-    OrderRequest:
+    CreateOrderRequest:
       type: object
       required:
         - orderId
