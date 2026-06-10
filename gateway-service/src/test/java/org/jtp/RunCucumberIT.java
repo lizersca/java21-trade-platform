@@ -12,7 +12,6 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 @SelectClasspathResource("features")
 @ConfigurationParameter(
         key = GLUE_PROPERTY_NAME,
-        value = "com.jtp"
+        value = "org.jtp.steps"
 )
-public class RunCucumberIT {
-}
+public class RunCucumberIT {}
